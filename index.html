@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Tâm Sự Dưới Nắng — Confession Ẩn Danh</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,600;1,9..144,500&family=Sen:wght@400;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="sky" id="sky"></div>
+<div class="rays"></div>
+<div class="sun"></div>
+<div class="horizon-glow"></div>
+
+<!-- Mây trôi -->
+<div class="cloud cloud-back" style="top: 15%; width: 140px; height: 50px;">
+  <svg viewBox="0 0 140 50" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid meet">
+    <ellipse cx="35" cy="25" rx="20" ry="18" fill="#FFFBF0"/>
+    <ellipse cx="55" cy="20" rx="28" ry="22" fill="#FFFBF0"/>
+    <ellipse cx="85" cy="25" rx="24" ry="20" fill="#FFFBF0"/>
+    <ellipse cx="110" cy="28" rx="18" ry="16" fill="#FFFBF0"/>
+  </svg>
+</div>
+
+<div class="cloud cloud-mid" style="top: 28%; width: 160px; height: 55px;">
+  <svg viewBox="0 0 160 55" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid meet">
+    <ellipse cx="40" cy="28" rx="22" ry="20" fill="#FFF9EB"/>
+    <ellipse cx="65" cy="22" rx="30" ry="24" fill="#FFF9EB"/>
+    <ellipse cx="100" cy="28" rx="26" ry="22" fill="#FFF9EB"/>
+    <ellipse cx="130" cy="32" rx="20" ry="18" fill="#FFF9EB"/>
+  </svg>
+</div>
+
+<div class="cloud cloud-front" style="top: 40%; width: 180px; height: 60px;">
+  <svg viewBox="0 0 180 60" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid meet">
+    <ellipse cx="45" cy="30" rx="25" ry="22" fill="#FFFDF8"/>
+    <ellipse cx="75" cy="24" rx="32" ry="26" fill="#FFFDF8"/>
+    <ellipse cx="115" cy="30" rx="28" ry="24" fill="#FFFDF8"/>
+    <ellipse cx="150" cy="35" rx="22" ry="20" fill="#FFFDF8"/>
+  </svg>
+</div>
+
+<div class="sea-wrap">
+  <div class="sea-base"></div>
+  <div class="wave wave-back">
+    <svg viewBox="0 0 2880 200" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
+      <path d="M0,100 C180,160 360,40 540,100 C720,160 900,40 1080,100 C1260,160 1440,40 1620,100 C1800,160 1980,40 2160,100 C2340,160 2520,40 2700,100 C2790,130 2880,80 2880,100 L2880,200 L0,200 Z" fill="#1C6E73"/>
+    </svg>
+  </div>
+  <div class="wave wave-mid">
+    <svg viewBox="0 0 2880 200" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
+      <path d="M0,110 C200,70 400,150 600,110 C800,70 1000,150 1200,110 C1400,70 1600,150 1800,110 C2000,70 2200,150 2400,110 C2600,70 2800,150 2880,120 L2880,200 L0,200 Z" fill="#2E8F92"/>
+    </svg>
+  </div>
+  <div class="reflection"></div>
+</div>
+
+<div class="boat">
+  <svg viewBox="0 0 80 60" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid meet">
+    <!-- Thân tàu -->
+    <path d="M 20 40 Q 15 35 12 25 L 20 20 L 60 20 L 68 25 Q 65 35 60 40 Z" fill="#8B6F47" stroke="#6B5232" stroke-width="1"/>
+    <path d="M 20 40 Q 15 40 12 45 L 68 45 Q 65 40 60 40 Z" fill="#A0826D" stroke="#6B5232" stroke-width="1"/>
+    <!-- Buồm chính -->
+    <path d="M 35 18 L 50 22 L 50 38 Q 40 42 35 40 Z" fill="#FFE5B4" stroke="#D4A574" stroke-width="0.8" opacity="0.9"/>
+    <path d="M 35 18 L 50 22 L 50 38 Q 40 42 35 40 Z" fill="#FFF0D9" stroke="none" opacity="0.4"/>
+    <!-- Cột buồm -->
+    <line x1="35" y1="18" x2="35" y2="40" stroke="#6B5232" stroke-width="1.2"/>
+    <!-- Chi tiết bé -->
+    <rect x="25" y="38" width="6" height="4" fill="#8B6F47" stroke="#6B5232" stroke-width="0.5"/>
+  </svg>
+</div>
+
+<button class="music-toggle" id="musicToggle" title="Bật/tắt nhạc nền">🎵</button>
+<audio id="bgMusic" loop preload="none"></audio>
+
+<div class="stack">
+  <div class="card" id="card">
+    <div class="seal">☀</div>
+    <div id="formView">
+      <div class="school-banner" id="schoolBanner">
+        <img id="schoolBannerImg" src="school-banner.jpg" alt="Ảnh trường" />
+      </div>
+
+      <div class="eyebrow">Ẩn danh</div>
+      <h1>Kể tôi nghe<br>điều bạn <em>giấu kín</em></h1>
+      <div class="subtitle">Không tên, không tài khoản. Chỉ là bạn và một lá thư nhỏ trôi giữa nắng và biển.</div>
+
+      <textarea id="content" placeholder="Viết điều bạn muốn nói ở đây..." maxlength="3000"></textarea>
+
+      <div class="file-row">
+        <label class="file-label" for="imageInput">
+          📎 <span id="fileLabelText">Đính kèm hình ảnh (không bắt buộc)</span>
+        </label>
+        <input type="file" id="imageInput" accept="image/*" />
+        <div class="polaroid" id="polaroid"><img id="preview" alt="preview" /></div>
+      </div>
+
+      <div class="captcha-row">
+        <div class="captcha-label">
+          <span>Xác minh: đếm số mặt trời ☀</span>
+          <button type="button" class="captcha-refresh" id="captchaRefresh" title="Đổi câu hỏi khác">⟳</button>
+        </div>
+        <div class="captcha-challenge">
+          <div class="captcha-suns" id="captchaSuns"></div>
+          <input type="text" inputmode="numeric" class="captcha-input" id="captchaInput" placeholder="?" maxlength="2" />
+        </div>
+      </div>
+
+      <input type="text" class="honeypot" id="website" name="website" tabindex="-1" autocomplete="off" />
+
+      <button class="submit" id="submitBtn">Thả trôi ra biển ⛵</button>
+      <div class="status" id="status"></div>
+    </div>
+
+    <div class="success-view" id="successView">
+      <div class="glow-circle">☀</div>
+      <h2>Đã gửi rồi!</h2>
+      <p>Confession của bạn đang trôi ra khơi dưới nắng chiều.<br>Cảm ơn vì đã tin tưởng chia sẻ 🤍</p>
+      <button id="againBtn">Viết thêm một điều nữa</button>
+    </div>
+
+    <div class="note">
+      Chúng mình chỉ lưu lại thời gian, nội dung và hình ảnh (nếu có) — không thu thập IP hay thông tin thiết bị của bạn.
+    </div>
+  </div>
+</div>
+
+<script src="script.js" defer></script>
+
+</body>
+</html>
